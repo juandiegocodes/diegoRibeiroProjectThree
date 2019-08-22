@@ -1,21 +1,158 @@
 @import "setup";
 
-body {
-  overflow: hidden;
+// test
+/* Main styles */
+svg {
+  z-index: 1;
 }
+.text {
+  fill: none;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 70 330;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke 6s infinite linear;
+  animation: stroke 6s infinite linear;
+}
+.text:nth-child(5n + 1) {
+  stroke: rgb(75, 73, 74);
+  -webkit-animation-delay: -1.2s;
+  animation-delay: -1.2s;
+}
+.text:nth-child(5n + 2) {
+  stroke: rgb(255, 255, 255);
+  -webkit-animation-delay: -2.4s;
+  animation-delay: -2.4s;
+}
+.text:nth-child(5n + 3) {
+  stroke: rgb(160, 156, 156);
+  -webkit-animation-delay: -3.6s;
+  animation-delay: -3.6s;
+}
+.text:nth-child(5n + 4) {
+  stroke: rgb(187, 187, 187);
+  -webkit-animation-delay: -4.8s;
+  animation-delay: -4.8s;
+}
+.text:nth-child(5n + 5) {
+  stroke: rgb(255, 255, 255);
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
+}
+
+.cover {
+  font: 5em/1 Open Sans, Impact;
+  text-transform: uppercase;
+  margin: 0;
+  height: 100vh;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  p {
+    color: white;
+    font-size: 30px;
+    display: flex;
+    margin-top: 25%;
+    text-transform: capitalize;
+  }
+  .headerBottoms{
+    margin-top: 5%;
+    a {
+      z-index: 10;
+      padding:10px;
+      text-decoration: none;
+      color: white;
+      border: white 5px solid;
+      margin-top: 1%;
+      font-size: 30px;
+      position: relative;
+    }
+  }
+
+}
+
+svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+// testover
+
+// general 
+body {
+  background: black;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+h2 {
+  font-size: 70px;
+}
+
+a:hover {
+  border-radius: 25px;
+  z-index: 10;
+}
+
+// instructions
+.instructions {
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  li {
+    padding: 10px;
+    font-size: 30px;
+  }
+  a {
+    padding:10px;
+    text-decoration: none;
+    color: white;
+    border: white 5px solid;
+    margin-top: 1%;
+    font-size: 30px;
+  }
+}
+
+// instructions over
 .canvas {
-  border: 5px solid black;
-  height: 80vh;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  height: 82vh;
   width: 98%;
   margin: 0 auto;
   display: flex;
   position: relative;
+  border-radius: 5px;
+
+}
+
+.gameBoard {
+  overflow: hidden;
+  display: none;
 }
 
 .mainContainer {
-  border: 5px solid black;
+  border: 5px solid white;
   display: flex;
   flex-direction: column;
+  border-radius: 5px;
 }
 h4 {
   animation: rain 7s;
@@ -25,10 +162,7 @@ h4 {
   transform: rotate(40deg);
   opacity: 1;
   transition: opacity 0.2s ease-out;
-  &.dissapear {
-    opacity: 0;
-    pointer-events: none;
-  }
+  font-size: 25px;
 }
 
 p {
@@ -41,7 +175,7 @@ p {
   }
   100% {
     background: auto;
-    top: 90%;
+    top: 85%;
   }
 }
 
@@ -51,9 +185,14 @@ p {
   justify-content: center;
 }
 .resultsContainer {
-  height: 10vh;
+  height: 7vh;
   display: flex;
   justify-content: space-around;
+  div p {
+    font-size: 25px;
+    padding-top: 5%;
+    margin: 0;
+  }
 }
 
 form {
@@ -64,6 +203,37 @@ form {
 input[type="text"] {
   height: 98%;
   width: 100%;
-  font-size: 4rem;
+  font-size: 2.5rem;
   text-align: center;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+}
+
+.resultsSection {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  flex-wrap: wrap;
+  h3 {
+    font-size: 40px;
+    text-align: center;
+  }
+  p {
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+  }
+  span {
+    margin-top: 5%;
+    font-size: 15px;
+    i {
+      color:  #38A1F3;
+      font-size: 20px;
+    }
+  }
 }

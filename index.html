@@ -4,28 +4,70 @@
    <meta charset="UTF-8">
    <title>Document</title>
    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap" rel="stylesheet">
+   <script src="https://kit.fontawesome.com/2194996be4.js"></script> 
    <link rel="stylesheet" href="styles/style.css"/>
 </head>
 <body>
+    <header class="cover">
+        <svg viewBox="0 50 600 300">
+                <!-- Symbol-->
+                <symbol id="s-text">
+                    <text text-anchor="middle" x="50%" y="50%" dy=".35em">Word Storm</text>
+                </symbol>
+                <!-- Duplicate symbols-->
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+                <use class="text" xlink:href="#s-text"></use>
+        </svg>
+        <p>the typing game</p>
+        <div class="headerBottoms">
+            <a href="#rules" class="start">START</a>
+        </div>   
+    </header>
     <main>
-        <div class="mainContainer">
-            <div class="resultsContainer">
-                <div class="scoreContainer">
-                    <p class="score">Score 0</p>
+        <section class="instructions" id="rules">
+            <h2>Instructions</h2>
+            <ul>
+                <li>Type each word as fast you can and hit enter</li>
+                <li>For each letter of the word you will receive 1pt </li>
+                <li>If the word reach the bottom you will lose a life</li>
+                <li>Type as any words you can in 60 seconds.</li>
+                <li> You will only have 3 lives!</li>
+            </ul>
+            <a href="#game" class="startGame">PLAY</a>
+        </section>
+        <section class="gameBoard" id="game">
+            <div class="mainContainer">
+                <div class="resultsContainer">
+                    <div class="scoreContainer">
+                        <p class="score">Score: 0</p>
+                    </div>
+                    <div>
+                        <p class="lifes">Lifes: 3</p>
+                    </div>
+                    <div>
+                        <p class="timerOn">Time Left: 60 sec</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="lifes">Lifes 3</p>
+                <div class="canvas" id="canvas">
+                </div>
+                <div class="inputContainer">
+                    <form action="">
+                        <input type="text" required class="inputText" placeholder="Your word Here">
+                    </form>
                 </div>
             </div>
-            <div class="canvas" id="canvas">
-            </div>
-            <div class="inputContainer">
-                <form action="">
-                    <input type="text" required class="inputText">
-                    <input type="submit" value="ENTER">
-                </form>
-            </div>
-        </div>
+        </section>
+        <section id="results" class="resultsSection">
+            <h3>Your Score is:</h3>
+            <p class="finalScore"></p>
+            <h3>Words Matched</h3>
+            <p class="wordsRight"></p>
+            <span>Had fun? dont forget to share it <a href="https://ctt.ac/14Pm0"><i class="fab fa-twitter-square"></i></a></span>
+        </section>
     </main>
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
     <script src="src/randomWords.js"></script>
