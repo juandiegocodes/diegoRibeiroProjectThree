@@ -63,7 +63,7 @@ svg {
   flex-direction: column;
   p {
     color: white;
-    font-size: 30px;
+    font-size: 1.25rem;
     display: flex;
     margin-top: 25%;
     text-transform: capitalize;
@@ -72,13 +72,14 @@ svg {
     margin-top: 5%;
     a {
       z-index: 10;
-      padding:10px;
-      text-decoration: none;
-      color: white;
-      border: white 5px solid;
       margin-top: 1%;
-      font-size: 30px;
+      font-size: 1.25rem;
       position: relative;
+      border: none;
+    }
+    a:hover{
+      font-size: 2rem;
+      transition: all 1s;
     }
   }
 
@@ -90,8 +91,6 @@ svg {
   height: 100%;
 }
 
-// testover
-
 // general 
 body {
   background: black;
@@ -99,8 +98,22 @@ body {
   color: white;
 }
 
+main {
+  font-size: 125%;
+}
+
 h2 {
-  font-size: 70px;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+a {
+  padding:1rem;
+  text-decoration: none;
+  color: white;
+  border: white 0.5rem solid;
+  margin-top: 1%;
+  font-size: 1.25rem;
 }
 
 a:hover {
@@ -108,29 +121,69 @@ a:hover {
   z-index: 10;
 }
 
+.wrapper {
+  max-width: 1500px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+p {
+  padding: 3px;
+}
+
 // instructions
 .instructions {
   height: 100vh;
   color: white;
-  display: flex;
   flex-direction: column;
   align-items: center;
   display: none;
-  li {
-    padding: 10px;
-    font-size: 30px;
+  justify-content: center;
+  .containerInstructions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    li {
+      padding: 0.75rem;
+      font-size:1.5rem;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+      border: white 5px solid;
+      margin-top: 1%;
+    }
   }
-  a {
-    padding:10px;
-    text-decoration: none;
-    color: white;
-    border: white 5px solid;
-    margin-top: 1%;
-    font-size: 30px;
+
+  .nextMobile {
+    display: none;
   }
+
 }
 
 // instructions over
+// difficulty
+.difficulty {
+  height: 100vh;
+  display: none;
+  .difficultyContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    h2 {
+      margin-bottom: 10%;
+    }
+    a{
+      margin: 1rem;
+    }
+  }
+}
+// Gamboard
 .canvas {
   border-top: 5px solid white;
   border-bottom: 5px solid white;
@@ -162,12 +215,9 @@ h4 {
   transform: rotate(40deg);
   opacity: 1;
   transition: opacity 0.2s ease-out;
-  font-size: 25px;
+  font-size: 2rem;
 }
 
-p {
-  padding: 3px;
-}
 @keyframes rain {
   0% {
     background: auto;
@@ -189,14 +239,13 @@ p {
   display: flex;
   justify-content: space-around;
   div p {
-    font-size: 25px;
-    padding-top: 5%;
+    font-size: 2rem;
     margin: 0;
   }
 }
 
 form {
-  width: 50%;
+  width: 70%;
   display: flex;
 }
 
@@ -219,21 +268,96 @@ input[type="text"] {
   justify-content: center;
   display: none;
   flex-wrap: wrap;
-  h3 {
-    font-size: 40px;
-    text-align: center;
-  }
-  p {
-    font-size: 35px;
-    text-align: center;
-    margin: 0;
-  }
-  span {
-    margin-top: 5%;
-    font-size: 15px;
-    i {
-      color:  #38A1F3;
-      font-size: 20px;
+  .containerResultsSection {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    display: flex;
+    h3 {
+      font-size: 2rem;
+      text-align: center;
     }
+    p {
+      font-size: 1.25rem;
+      text-align: center;
+      margin: 0;
+    }
+    .twitterLink {
+      border: none;
+    }
+    .tryAgain {
+      margin-top: 5%;
+    }
+  }
+}
+
+span {
+  margin-top: 5%;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+  i {
+    color:  #38A1F3;
+    font-size: 2rem;
+
+  }
+}
+
+// Queries
+
+/* Portrait tablet and small desktops */
+@media (max-width:1400px) {
+  .cover p {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 940px){}
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px){
+  .cover {
+    font-size: 5rem;
+    p {
+      margin-top: 40%;
+      font-size: 1.5rem;
+
+    }
+  }
+}
+@media (max-width: 615px) {
+  .resultsContainer div p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px){
+  .cover {
+    font-size: 5rem;
+    p {
+      margin-top: 40%;
+      font-size: 1.25rem;
+    }
+  }
+  .cover .headerBottoms a {
+    font-size: 1rem;
+    margin-top: 10%;
+    border: none;
+  }
+  .cover .headerBottoms a:hover {
+    font-size: 1.5rem;
+    transition: all 1s;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .instructions .containerInstructions li {
+    font-size: 1.25rem;
+  }
+}
+/*Even smaller*/
+@media(max-width: 390px){
+  main {
+    
   }
 }

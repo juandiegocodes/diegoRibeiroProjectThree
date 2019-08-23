@@ -17,7 +17,7 @@ wordApp.score = 0;
 wordApp.wordsRight = []
 // adding the lifes variable to my HTML
 wordApp.displayLifes = function() {
-  $(".lifes").html(`Lifes ${wordApp.finalLife}`);
+  $(".lifes").html(`Lifes: ${wordApp.finalLife}`);
 };
 // creating a random porcentage to be used while positioning the words
 wordApp.randomPercent = function() {
@@ -50,7 +50,7 @@ wordApp.submitInput = function() {
       console.log(wordApp.wordsRight);
       wordApp.wordScore = wordUser.length;
       wordApp.score += wordApp.wordScore;
-      $(".score").html(`Score ${wordApp.score}`);
+      $(".score").html(`${wordApp.score}`);
       $(`h4:contains(${wordUser})`).remove();
       $(".inputText").val("");
       $(".inputText").css("border","none")
@@ -72,7 +72,12 @@ wordApp.dissapearWord = function() {
         wordApp.displayLifes();
       });
       if (wordApp.finalLife === 0) {
-        alert("game over")
+        Swal.fire({
+          title: 'GAME OVER!',
+          text: 'Check Your score',
+          type: 'warning',
+          confirmButtonText: 'Go'
+        })
         $('.gameBoard').css("display" , "none");
         $('.resultsSection').css("display","flex")
         clearInterval(wordApp.intervalGameOver);
@@ -83,7 +88,6 @@ wordApp.dissapearWord = function() {
       }
     }, 500);
 }
-
 // every 1.5 seconds a random word will be generated
 wordApp.intervalWord = function() {
   wordApp.intervalWord = setInterval(() => {
@@ -92,7 +96,7 @@ wordApp.intervalWord = function() {
     wordApp.addWord(randomWord);
     // Remove the randomly selected word from the word bank to avoid duplicates
     wordApp.wordBank = wordApp.wordBank.filter(word => word !== randomWord);
-  }, 1250);
+  }, wordApp.timeWordAppear);
 };
 
 // random number to be used in the wordbank array
@@ -104,7 +108,12 @@ wordApp.randomNumber = function() {
 wordApp.time = 60;
 wordApp.timer = function() {
   if (wordApp.time===0) {
-    alert("Time's Over!");
+    Swal.fire({
+      title: 'TIME IS OVER!',
+      text: 'Check Your score',
+      type: 'warning',
+      confirmButtonText: 'Go'
+    })
     clearInterval(wordApp.intervalTimer);
     clearInterval(wordApp.intervalGameOver);
     clearInterval(wordApp.intervalWord);
@@ -115,7 +124,7 @@ wordApp.timer = function() {
   }
   else {
       console.log(wordApp.time);
-      $('.timerOn').html(`Time Left: ${wordApp.time} Sec`);
+      $('.timerOn').html(`Time : ${wordApp.time} S`);
       wordApp.time = wordApp.time -1;
 
   }
@@ -143,9 +152,40 @@ wordApp.hiderStart = $('.start').on('click', function(){
   $('.instructions').css("display","flex")
 });
 
-wordApp.hideInstructions = $('.startGame').on('click', function(){
+wordApp.hideInstructions = $('.next').on('click', function(){
   $('.instructions').css("display" , "none");
+  $('.difficulty').css("display","flex")
+});
+wordApp.hideDifficulty = 
+$('.difficultyOption').on('click', function(){
+  $('.difficulty').css("display" , "none");
   $('.gameBoard').css("display","block")
+});
+
+// try again function
+
+wordApp.tryAgain = function() {
+    window.location.reload(false);
+}
+
+wordApp.tryAgainButton = $('.tryAgain').on('click', function() {
+  wordApp.tryAgain();
+})
+
+// HARD
+$('.hardSelected').on('click', function(){
+  wordApp.timeWordAppear = 900;
+});
+
+// MEDIUM
+$('.mediumSelected').on('click', function(){
+  wordApp.timeWordAppear = 1500;
+});
+
+// EASY
+
+$('.easySelected').on('click', function(){
+  wordApp.timeWordAppear = 1800;
 });
 
 // init
@@ -155,10 +195,9 @@ wordApp.init = function() {
   wordApp.intervalWord();
   wordApp.dissapearWord();
   wordApp.myInt();
-
 };
 
 $(function() {
-  $('.startGame').on('click' , wordApp.init)
+  $('.difficultyOption').on('click' , wordApp.init)
 });
 

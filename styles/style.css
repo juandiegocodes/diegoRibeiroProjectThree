@@ -259,7 +259,7 @@ svg {
 
 .cover p {
   color: white;
-  font-size: 30px;
+  font-size: 1.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,13 +273,16 @@ svg {
 
 .cover .headerBottoms a {
   z-index: 10;
-  padding: 10px;
-  text-decoration: none;
-  color: white;
-  border: white 5px solid;
   margin-top: 1%;
-  font-size: 30px;
+  font-size: 1.25rem;
   position: relative;
+  border: none;
+}
+
+.cover .headerBottoms a:hover {
+  font-size: 2rem;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
 svg {
@@ -294,8 +297,22 @@ body {
   color: white;
 }
 
+main {
+  font-size: 125%;
+}
+
 h2 {
-  font-size: 70px;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+a {
+  padding: 1rem;
+  text-decoration: none;
+  color: white;
+  border: white 0.5rem solid;
+  margin-top: 1%;
+  font-size: 1.25rem;
 }
 
 a:hover {
@@ -303,9 +320,33 @@ a:hover {
   z-index: 10;
 }
 
+.wrapper {
+  max-width: 1500px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+p {
+  padding: 3px;
+}
+
 .instructions {
   height: 100vh;
   color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.instructions .containerInstructions {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -316,21 +357,57 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
 }
 
-.instructions li {
-  padding: 10px;
-  font-size: 30px;
+.instructions .containerInstructions li {
+  padding: 0.75rem;
+  font-size: 1.5rem;
 }
 
-.instructions a {
-  padding: 10px;
+.instructions .containerInstructions a {
   text-decoration: none;
   color: white;
   border: white 5px solid;
   margin-top: 1%;
-  font-size: 30px;
+}
+
+.instructions .nextMobile {
+  display: none;
+}
+
+.difficulty {
+  height: 100vh;
+  display: none;
+}
+
+.difficulty .difficultyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.difficulty .difficultyContainer h2 {
+  margin-bottom: 10%;
+}
+
+.difficulty .difficultyContainer a {
+  margin: 1rem;
 }
 
 .canvas {
@@ -376,11 +453,7 @@ h4 {
   opacity: 1;
   -webkit-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out;
-  font-size: 25px;
-}
-
-p {
-  padding: 3px;
+  font-size: 2rem;
 }
 
 @-webkit-keyframes rain {
@@ -425,13 +498,12 @@ p {
 }
 
 .resultsContainer div p {
-  font-size: 25px;
-  padding-top: 5%;
+  font-size: 2rem;
   margin: 0;
 }
 
 form {
-  width: 50%;
+  width: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,23 +540,104 @@ input[type="text"] {
       flex-wrap: wrap;
 }
 
-.resultsSection h3 {
-  font-size: 40px;
+.resultsSection .containerResultsSection {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.resultsSection .containerResultsSection h3 {
+  font-size: 2rem;
   text-align: center;
 }
 
-.resultsSection p {
-  font-size: 35px;
+.resultsSection .containerResultsSection p {
+  font-size: 1.25rem;
   text-align: center;
   margin: 0;
 }
 
-.resultsSection span {
-  margin-top: 5%;
-  font-size: 15px;
+.resultsSection .containerResultsSection .twitterLink {
+  border: none;
 }
 
-.resultsSection span i {
-  color: #38A1F3;
-  font-size: 20px;
+.resultsSection .containerResultsSection .tryAgain {
+  margin-top: 5%;
 }
+
+span {
+  margin-top: 5%;
+  font-size: 20px;
+  display: block;
+  text-align: center;
+}
+
+span i {
+  color: #38A1F3;
+  font-size: 2rem;
+}
+
+/* Portrait tablet and small desktops */
+@media (max-width: 1400px) {
+  .cover p {
+    font-size: 2rem;
+  }
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+  .cover {
+    font-size: 5rem;
+  }
+  .cover p {
+    margin-top: 40%;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 615px) {
+  .resultsContainer div p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+  .cover {
+    font-size: 5rem;
+  }
+  .cover p {
+    margin-top: 40%;
+    font-size: 1.25rem;
+  }
+  .cover .headerBottoms a {
+    font-size: 1rem;
+    margin-top: 10%;
+    border: none;
+  }
+  .cover .headerBottoms a:hover {
+    font-size: 1.5rem;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .instructions .containerInstructions li {
+    font-size: 1.25rem;
+  }
+}
+
+/*Even smaller*/
