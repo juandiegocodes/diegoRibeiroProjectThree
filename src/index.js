@@ -163,6 +163,7 @@ $('.difficultyOption').on('click', function(){
 });
 
 // try again function
+// test
 
 wordApp.tryAgain = function() {
     window.location.reload(false);
