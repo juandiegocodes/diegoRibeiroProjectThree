@@ -28,6 +28,7 @@
   @media (max-width: 480px){
     .cover {
       font-size: 5rem;
+      overflow: hidden;
       p {
         margin-top: 40%;
         font-size: 1.25rem;
@@ -51,6 +52,10 @@
     }
   
     .mainContainer {
+      height: auto;
+    }
+
+    .instructions .containerInstructions {
       height: auto;
     }
     .instructions .containerInstructions li {

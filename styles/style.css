@@ -642,6 +642,7 @@ span i {
 @media (max-width: 480px) {
   .cover {
     font-size: 5rem;
+    overflow: hidden;
   }
   .cover p {
     margin-top: 40%;
@@ -664,6 +665,9 @@ span i {
     height: 50vh;
   }
   .mainContainer {
+    height: auto;
+  }
+  .instructions .containerInstructions {
     height: auto;
   }
   .instructions .containerInstructions li {
