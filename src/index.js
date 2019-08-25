@@ -203,9 +203,9 @@ wordApp.init = function() {
 
 wordApp.initMobile = function() {
   $('.inputText').focus();
-  $('input[type="text"]').blur(function() {
-    $(window).scrollTop(0,0);
-  });
+  $('.inputText').on('focus', function() {
+    document.body.scrollTop = $(this).offset().top;
+});
   wordApp.timeWordAppear = 2000;
   wordApp.submitInput();
   // adding random word generated to my html
