@@ -33,22 +33,19 @@
         font-size: 1.25rem;
       }
     }
-    .cover .headerBottoms a {
-      font-size: 1rem;
-      margin-top: 10%;
-      border: none;
-    }
-    .cover .headerBottoms a:hover {
-      font-size: 1.5rem;
-      transition: all 1s;
+    .cover .headerBottoms {
+      margin-top :60%;
+      a {
+        font-size: 1rem;
+      }
+      a:hover {
+        transition: all 1s;
+      }
     }
     h2 {
       font-size: 3rem;
     }
-  
-    .instructions {
-      height: auto;
-    }
+    
     .canvas{
       height: 50vh;
     }
