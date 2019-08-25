@@ -639,8 +639,8 @@ span i {
   .instructions {
     height: auto;
   }
-  .gameBoard {
-    height: auto;
+  .canvas {
+    height: 50vh;
   }
   .mainContainer {
     height: auto;
