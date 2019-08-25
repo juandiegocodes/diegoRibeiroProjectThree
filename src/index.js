@@ -202,7 +202,7 @@ wordApp.init = function() {
 };
 
 wordApp.initMobile = function() {
-  $('.inputText').on('focus', function() {
+  $('.inputText').on('click', function() {
     window.scrollTo(0, 0);
 });
   wordApp.timeWordAppear = 2000;
