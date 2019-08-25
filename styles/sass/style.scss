@@ -334,7 +334,6 @@ span {
 @media (max-width: 480px){
   .cover {
     font-size: 5rem;
-    height: auto;
     p {
       margin-top: 40%;
       font-size: 1.25rem;
@@ -394,10 +393,6 @@ span {
   .resultsContainer {
     height: 5vh;
   }
-
-  // .canvas {
-  //   height: 42vh;
-  // }
 }
 /*Even smaller*/
 @media(max-width: 390px){

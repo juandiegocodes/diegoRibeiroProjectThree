@@ -618,7 +618,6 @@ span i {
 @media (max-width: 480px) {
   .cover {
     font-size: 5rem;
-    height: auto;
   }
   .cover p {
     margin-top: 40%;
