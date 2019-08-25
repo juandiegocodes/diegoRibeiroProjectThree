@@ -1,0 +1,64 @@
+
+// general 
+body {
+    background: black;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+  }
+  
+  main {
+    font-size: 125%;
+  }
+  
+h2, h3 {
+  color: red;
+}
+
+  h2 {
+    font-size: 4rem;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  
+  a {
+    padding:1rem;
+    text-decoration: none;
+    color: white;
+    border: white 0.5rem solid;
+    margin-top: 1%;
+    font-size: 1.25rem;
+    border-radius: 15px;
+    width: 15rem;
+    text-align: center
+  }
+  
+  a:hover {
+    transition: all 0.75s;
+    z-index: 10;
+    border: red 0.5rem solid;
+    color: red;
+  }
+  
+  .wrapper {
+    max-width: 1500px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  p {
+    padding: 3px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }

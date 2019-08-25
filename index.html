@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <title>WORD STORM: The typing</title>
+   <title>WORD STORM: Typing game</title>
    <meta property="og:STORM WORD" content="The typing game">
    <meta property="og:Typing game" content="match as many words as you can in 1 minute">
    <meta property="og:image" content="https://imgur.com/5N0gOqH">
@@ -28,10 +28,10 @@
             <use class="text" xlink:href="#s-text"></use>
             <use class="text" xlink:href="#s-text"></use>
         </svg>
-        <p>the typing game</p>
         <div class="headerBottoms">
             <a href="#rules" class="start">START</a>
-        </div> 
+        </div>
+        <span>A typing game created by @juandiegocodes</span> 
     </header>
     <main>
         <section class="instructions" id="rules">
@@ -54,9 +54,9 @@
             <div class="wrapper">
                 <div class="difficultyContainer">
                     <h2>Select your Difficulty</h2>
-                    <a href="#" class="difficultyOption hardSelected">HARD</a>
-                    <a href="#" class="difficultyOption mediumSelected">MEDIUM</a>
                     <a href="#" class="difficultyOption easySelected">EASY</a>
+                    <a href="#" class="difficultyOption mediumSelected">MEDIUM</a>
+                    <a href="#" class="difficultyOption hardSelected">HARD</a>
                 </div>
             </div>
         </section>
@@ -77,7 +77,8 @@
                 </div>
                 <div class="inputContainer">
                     <form action="" autocomplete="off">
-                        <input type="text" required class="inputText" placeholder="Enter Text" autocomplete="off">
+                        <label for="name" class="sr-only">Enter Name</label>
+                        <input type="text" required class="inputText" placeholder="Enter Text" autocomplete="off" id="name">
                     </form>
                 </div>
             </div>
@@ -89,7 +90,7 @@
                     <p class="finalScore"></p>
                     <h3>Words Matched</h3>
                     <p class="wordsRight"></p>
-                    <span>Had fun? dont forget to share it  <a href="https://ctt.ac/14Pm0" class="twitterLink"><i class="fab fa-twitter-square"></i></a></span>
+                    <span>Had fun? dont forget to share it  <a href="https://ctt.ac/14Pm0" class="twitterLink" aria-label="Share a tweet"><i class="fab fa-twitter-square" aria-hidden="true"></i></a></span>
                     <a href="#" class="tryAgain">Try Again?</a>
                 </div>
             </div>

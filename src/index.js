@@ -1,5 +1,5 @@
 const wordApp = {};
-// How word.lifesAdapted works: every time a word reach the bottom of the screen word.lifesAdapted will be = to a value between 14 and 15 so if 10 is > word.lifesAdapted you have all your lifes, if 20>  wordApp.lifesAdapted  you have lost 1 life, if  32> word.applifesAdapted lost two lifes and finally if word.appLifesAdapted is higher than 32 more than 3 words have reach the bottom and you have lost all your lifes to this point.
+// How word.lifesAdapted works: every time a word reach the bottom of the screen word.lifesAdapted will be = to a value between 14 and 21 so if 10 is > word.lifesAdapted you have all your lifes, if 22>  wordApp.lifesAdapted  you have lost 1 life, if  41> word.applifesAdapted lost two lifes and finally if word.appLifesAdapted is higher than 41 more than 3 words have reach the bottom and you have lost all your lifes to this point.
 wordApp.lifes = function() {
   if (wordApp.lifesAdapted < 10) {
     wordApp.finalLife = 3;
@@ -17,7 +17,7 @@ wordApp.score = 0;
 wordApp.wordsRight = []
 
 // Words function called from randomWords.js and it will create 100 random words
-  wordApp.wordBank = words(100);
+wordApp.wordBank = words(100);
 
 // adding the lifes variable to my HTML
 wordApp.displayLifes = function() {
@@ -27,9 +27,6 @@ wordApp.displayLifes = function() {
 wordApp.randomPercent = function() {
   return Math.floor(Math.random() * 70) + 1;
 };
-
-
-
 // matching the user input with my h4 variables
 wordApp.submitInput = function() {
   $(`form`).on(`submit`, function(e) {
@@ -61,14 +58,13 @@ wordApp.dissapearWord = function() {
         wordApp.lifesAdapted = wordApp.lifesAdapted + 1;
         wordApp.lifes();
         wordApp.displayLifes();
-        console.log(wordApp.lifesAdapted);
       });
       if (wordApp.finalLife === 0) {
         Swal.fire({
           title: 'GAME OVER!',
-          text: 'Check Your score',
+          text: 'Your score',
           type: 'warning',
-          confirmButtonText: 'Go'
+          confirmButtonText: 'Check'
         })
         $('.gameBoard').css("display" , "none");
         $('.resultsSection').css("display","flex")
@@ -90,12 +86,10 @@ wordApp.intervalWord = function() {
     wordApp.wordBank = wordApp.wordBank.filter(word => word !== randomWord);
   }, wordApp.timeWordAppear);
 };
-
 // random number to be used in the wordbank array
 wordApp.randomNumber = function() {
   return Math.floor(Math.random() * wordApp.wordBank.length);
 };
-
 // timer
 wordApp.time = 60;
 wordApp.timer = function() {
@@ -208,7 +202,7 @@ wordApp.initMobile = function() {
   $('.inputText').on('click', function() {
     window.scrollTo(0, 0);
 });
-  wordApp.timeWordAppear = 2000;
+  wordApp.timeWordAppear = 1800;
   wordApp.submitInput();
   // adding random word generated to my html
   wordApp.addWord = function(word) {
