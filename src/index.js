@@ -203,7 +203,7 @@ wordApp.init = function() {
 
 wordApp.initMobile = function() {
   $('.inputText').on('focus', function() {
-    document.body.scrollTop = $(this).offset().top;
+    window.scrollTo(0, 0);
 });
   wordApp.timeWordAppear = 2000;
   wordApp.submitInput();
