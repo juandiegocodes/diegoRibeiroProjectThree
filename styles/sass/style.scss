@@ -334,6 +334,7 @@ span {
 @media (max-width: 480px){
   .cover {
     font-size: 5rem;
+    height: auto;
     p {
       margin-top: 40%;
       font-size: 1.25rem;
@@ -350,6 +351,14 @@ span {
   }
   h2 {
     font-size: 3rem;
+  }
+
+  .instructions {
+    height: auto;
+  }
+
+  .gameBoard {
+    height: auto;
   }
   .instructions .containerInstructions li {
     font-size: 1.25rem;
@@ -386,9 +395,9 @@ span {
     height: 5vh;
   }
 
-  .canvas {
-    height: 42vh;
-  }
+  // .canvas {
+  //   height: 42vh;
+  // }
 }
 /*Even smaller*/
 @media(max-width: 390px){
