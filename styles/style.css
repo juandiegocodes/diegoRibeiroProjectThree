@@ -642,6 +642,9 @@ span i {
   .gameBoard {
     height: auto;
   }
+  .mainContainer {
+    height: auto;
+  }
   .instructions .containerInstructions li {
     font-size: 1.25rem;
   }
