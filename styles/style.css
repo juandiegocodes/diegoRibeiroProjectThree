@@ -179,7 +179,6 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   overflow: hidden;
 }
 
-/* Main styles */
 svg {
   z-index: 1;
 }
@@ -219,7 +218,7 @@ svg {
 }
 
 .text:nth-child(5n + 5) {
-  stroke: white;
+  stroke: red;
   -webkit-animation-delay: -6s;
   animation-delay: -6s;
 }
@@ -257,31 +256,23 @@ svg {
           flex-direction: column;
 }
 
-.cover p {
-  color: white;
-  font-size: 1.25rem;
+.cover span {
+  font-size: 0.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 25%;
+  margin-top: 10%;
   text-transform: capitalize;
 }
 
 .cover .headerBottoms {
-  margin-top: 5%;
+  margin-top: 25%;
 }
 
 .cover .headerBottoms a {
   z-index: 10;
   margin-top: 1%;
-  font-size: 1.25rem;
   position: relative;
-}
-
-.cover .headerBottoms a:hover {
-  font-size: 2rem;
-  -webkit-transition: all 1s;
-  transition: all 1s;
 }
 
 svg {
@@ -300,9 +291,18 @@ main {
   font-size: 125%;
 }
 
+h2, h3 {
+  color: red;
+}
+
 h2 {
   font-size: 4rem;
   margin-bottom: 0;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
 }
 
 a {
@@ -312,11 +312,17 @@ a {
   border: white 0.5rem solid;
   margin-top: 1%;
   font-size: 1.25rem;
+  border-radius: 15px;
+  width: 15rem;
+  text-align: center;
 }
 
 a:hover {
-  border-radius: 25px;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
   z-index: 10;
+  border: red 0.5rem solid;
+  color: red;
 }
 
 .wrapper {
@@ -327,6 +333,17 @@ a:hover {
 
 p {
   padding: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .instructions {
@@ -367,11 +384,17 @@ p {
   font-size: 1.5rem;
 }
 
-.instructions .containerInstructions a {
-  text-decoration: none;
-  color: white;
-  border: white 5px solid;
-  margin-top: 1%;
+.instructions .containerInstructions ul {
+  list-style: none;
+}
+
+.instructions .containerInstructions ul li::before {
+  content: "\2022";
+  color: red;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .instructions .nextMobile {
@@ -406,12 +429,12 @@ p {
 }
 
 .difficulty .difficultyContainer a {
-  margin: 1rem;
+  margin: 2.5rem;
 }
 
 .canvas {
-  border-top: 5px solid white;
-  border-bottom: 5px solid white;
+  border-top: 5px solid red;
+  border-bottom: 5px solid red;
   height: 82vh;
   width: 98%;
   margin: 0 auto;
@@ -460,9 +483,12 @@ h4 {
     background: auto;
     top: 0px;
   }
+  35% {
+    color: white;
+  }
   100% {
     background: auto;
-    top: 85%;
+    top: 80%;
     color: red;
   }
 }
@@ -472,9 +498,12 @@ h4 {
     background: auto;
     top: 0px;
   }
+  35% {
+    color: white;
+  }
   100% {
     background: auto;
-    top: 85%;
+    top: 80%;
     color: red;
   }
 }
@@ -559,13 +588,8 @@ input[type="text"] {
   display: flex;
 }
 
-.resultsSection .containerResultsSection h3 {
-  font-size: 2rem;
-  text-align: center;
-}
-
 .resultsSection .containerResultsSection p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
   margin: 0;
 }
@@ -704,5 +728,3 @@ span i {
     height: auto;
   }
 }
-
-/*Even smaller*/

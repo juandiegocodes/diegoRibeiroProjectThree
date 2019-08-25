@@ -1,0 +1,19 @@
+// difficulty
+.difficulty {
+    height: 100vh;
+    display: none;
+    .difficultyContainer {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      h2 {
+        margin-bottom: 5%;
+      }
+      a{
+        margin: 2.5rem;
+      }
+    }
+  }

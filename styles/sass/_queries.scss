@@ -1,0 +1,102 @@
+// Queries
+
+/* Portrait tablet and small desktops */
+@media (max-width:1400px) {
+    .cover p {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 940px){}
+  /* Landscape phone to portrait tablet */
+  @media (max-width: 768px){
+    .cover {
+      font-size: 5rem;
+      p {
+        margin-top: 40%;
+        font-size: 1.5rem;
+  
+      }
+    }
+  }
+  @media (max-width: 615px) {
+    .resultsContainer div p {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Landscape phones and down */
+  @media (max-width: 480px){
+    .cover {
+      font-size: 5rem;
+      p {
+        margin-top: 40%;
+        font-size: 1.25rem;
+      }
+    }
+    .cover .headerBottoms a {
+      font-size: 1rem;
+      margin-top: 10%;
+      border: none;
+    }
+    .cover .headerBottoms a:hover {
+      font-size: 1.5rem;
+      transition: all 1s;
+    }
+    h2 {
+      font-size: 3rem;
+    }
+  
+    .instructions {
+      height: auto;
+    }
+    .canvas{
+      height: 50vh;
+    }
+  
+    .mainContainer {
+      height: auto;
+    }
+    .instructions .containerInstructions li {
+      font-size: 1.25rem;
+    }
+    .next {
+      display: none;
+    }
+    .instructions .nextMobile {
+      display: block;
+    }
+    h4 {
+      animation: rain 10s;
+      animation-fill-mode: forwards;
+      position: absolute;
+      animation-timing-function: linear;
+      opacity: 1;
+      transition: opacity 0.2s ease-out;
+      font-size: 1.30rem;
+      transform: rotate(0deg);
+    }
+    
+    @keyframes rain {
+      0% {
+        background: auto;
+        opacity: 1;
+      }
+      100% {
+        background: auto;
+        opacity: 0;
+        color: red;
+      }
+    }
+    .resultsContainer {
+      height: auto;
+      div p {
+        font-size: 1rem;
+      }
+    }
+    input[type="text"]{
+      font-size: 1rem;
+    }
+    .inputContainer {
+      height: auto;
+    }
+  }

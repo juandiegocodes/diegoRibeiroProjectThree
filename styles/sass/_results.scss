@@ -1,0 +1,40 @@
+.resultsSection {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-wrap: wrap;
+    .containerResultsSection {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: flex;
+      p {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 0;
+      }
+      .twitterLink {
+        border: none;
+      }
+      .tryAgain {
+        margin-top: 5%;
+      }
+    }
+  }
+  
+  span {
+    margin-top: 5%;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+    i {
+      color:  #38A1F3;
+      font-size: 2rem;
+  
+    }
+  }
+  
