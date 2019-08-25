@@ -3,9 +3,9 @@ const wordApp = {};
 wordApp.lifes = function() {
   if (wordApp.lifesAdapted < 10) {
     wordApp.finalLife = 3;
-  } else if (wordApp.lifesAdapted < 20) {
+  } else if (wordApp.lifesAdapted < 22) {
     wordApp.finalLife = 2;
-  } else if (wordApp.lifesAdapted < 32) {
+  } else if (wordApp.lifesAdapted < 41) {
     wordApp.finalLife = 1;
   } else {
     wordApp.finalLife = 0;
@@ -15,6 +15,10 @@ wordApp.lifesAdapted = 0;
 wordApp.finalLife = 3;
 wordApp.score = 0;
 wordApp.wordsRight = []
+
+// Words function called from randomWords.js and it will create 100 random words
+  wordApp.wordBank = words(100);
+
 // adding the lifes variable to my HTML
 wordApp.displayLifes = function() {
   $(".lifes").html(`Lifes: ${wordApp.finalLife}`);
@@ -23,19 +27,8 @@ wordApp.displayLifes = function() {
 wordApp.randomPercent = function() {
   return Math.floor(Math.random() * 70) + 1;
 };
-// Words function called from randomWords.js and it will create 100 random words
-wordApp.wordBank = words(100);
 
-// adding random word generated to my html
-wordApp.addWord = function(word) {
-  const displayWord = $("<h4/>")
-    .css({
-      left: `${wordApp.randomPercent()}%`,
-      transform: `rotate(${wordApp.randomPercent()}deg)`
-    })
-    .text(word);
-  $(".canvas").append(displayWord);
-};
+
 
 // matching the user input with my h4 variables
 wordApp.submitInput = function() {
@@ -47,15 +40,13 @@ wordApp.submitInput = function() {
     if ($(`h4:contains(${wordUser})`).text() === wordUser) {
       // score of word is based on length of the sucessfully submitted word
       wordApp.wordsRight.push(` ${wordUser}`);
-      console.log(wordApp.wordsRight);
       wordApp.wordScore = wordUser.length;
       wordApp.score += wordApp.wordScore;
       $(".score").html(`${wordApp.score}`);
       $(`h4:contains(${wordUser})`).remove();
       $(".inputText").val("");
-      $(".inputText").css("border","none")
     } else {
-      $(".inputText").css("border","red solid 2px")    
+      $(".inputText").effect( "shake", {times:2}, 300 )
     }
   });
 };
@@ -70,6 +61,7 @@ wordApp.dissapearWord = function() {
         wordApp.lifesAdapted = wordApp.lifesAdapted + 1;
         wordApp.lifes();
         wordApp.displayLifes();
+        console.log(wordApp.lifesAdapted);
       });
       if (wordApp.finalLife === 0) {
         Swal.fire({
@@ -88,7 +80,7 @@ wordApp.dissapearWord = function() {
       }
     }, 500);
 }
-// every 1.5 seconds a random word will be generated
+// every X seconds a random word will be generated
 wordApp.intervalWord = function() {
   wordApp.intervalWord = setInterval(() => {
     const randomIndex = wordApp.randomNumber();
@@ -123,10 +115,8 @@ wordApp.timer = function() {
     $('.resultsSection').css("display","flex")
   }
   else {
-      console.log(wordApp.time);
-      $('.timerOn').html(`Time : ${wordApp.time} S`);
+      $('.timerOn').html(`Time : ${wordApp.time} s`);
       wordApp.time = wordApp.time -1;
-
   }
 }
 
@@ -141,7 +131,6 @@ wordApp.displayScore = function() {
 }
 
 // adding words right
-
 wordApp.displayWordsRight = function() {
   $('.wordsRight').html(`${wordApp.wordsRight}`);
 }
@@ -151,7 +140,6 @@ wordApp.hiderStart = $('.start').on('click', function(){
   $('header').css("display" , "none");
   $('.instructions').css("display","flex")
 });
-
 wordApp.hideInstructions = $('.next').on('click', function(){
   $('.instructions').css("display" , "none");
   $('.difficulty').css("display","flex")
@@ -159,11 +147,15 @@ wordApp.hideInstructions = $('.next').on('click', function(){
 wordApp.hideDifficulty = 
 $('.difficultyOption').on('click', function(){
   $('.difficulty').css("display" , "none");
+  $('.gameBoard').css("display","block");
+  $('.inputText').focus();
+});
+wordApp.hideMobile = $('.nextMobile').on('click', function(){
+  $('.instructions').css("display" , "none");
   $('.gameBoard').css("display","block")
 });
 
 // try again function
-// test
 
 wordApp.tryAgain = function() {
     window.location.reload(false);
@@ -189,16 +181,45 @@ $('.easySelected').on('click', function(){
   wordApp.timeWordAppear = 1800;
 });
 
+
 // init
 
 wordApp.init = function() {
   wordApp.submitInput();
+  // adding random word generated to my html
+  wordApp.addWord = function(word) {
+    const displayWord = $("<h4>")
+      .css({
+        left: `${wordApp.randomPercent()}%`,
+        transform: `rotate(${wordApp.randomPercent()}deg)`
+      })
+      .text(word);
+    $(".canvas").append(displayWord);
+  };
   wordApp.intervalWord();
   wordApp.dissapearWord();
   wordApp.myInt();
 };
 
+wordApp.initMobile = function() {
+  wordApp.timeWordAppear = 1800;
+  wordApp.submitInput();
+  // adding random word generated to my html
+  wordApp.addWord = function(word) {
+    const displayWord = $("<h4>")
+      .css({
+        left: `${wordApp.randomPercent()}%`,
+        bottom: `${wordApp.randomPercent()}%`
+      })
+      .text(word);
+    $(".canvas").append(displayWord);
+  };
+  wordApp.intervalWord();
+  wordApp.dissapearWord();
+  wordApp.myInt();
+};
 $(function() {
   $('.difficultyOption').on('click' , wordApp.init)
+  $('.nextMobile').on('click' , wordApp.initMobile)
 });
 

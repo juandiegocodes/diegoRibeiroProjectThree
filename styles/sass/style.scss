@@ -75,7 +75,6 @@ svg {
       margin-top: 1%;
       font-size: 1.25rem;
       position: relative;
-      border: none;
     }
     a:hover{
       font-size: 2rem;
@@ -183,7 +182,7 @@ p {
     }
   }
 }
-// Gamboard
+// Gameboard
 .canvas {
   border-top: 5px solid white;
   border-bottom: 5px solid white;
@@ -226,6 +225,7 @@ h4 {
   100% {
     background: auto;
     top: 85%;
+    color: red;
   }
 }
 
@@ -353,6 +353,41 @@ span {
   }
   .instructions .containerInstructions li {
     font-size: 1.25rem;
+  }
+  .next {
+    display: none;
+  }
+  .instructions .nextMobile {
+    display: block;
+  }
+  h4 {
+    animation: rain 10s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    animation-timing-function: linear;
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+    font-size: 2rem;
+    transform: rotate(0deg);
+  }
+  
+  @keyframes rain {
+    0% {
+      background: auto;
+      opacity: 1;
+    }
+    100% {
+      background: auto;
+      opacity: 0;
+      color: red;
+    }
+  }
+  .resultsContainer {
+    height: 5vh;
+  }
+
+  .canvas {
+    height: 42vh;
   }
 }
 /*Even smaller*/

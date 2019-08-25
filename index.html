@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <title>Document</title>
+   <title>WORD STORM: The typing</title>
+   <meta property="og:STORM WORD" content="The typing game">
+   <meta property="og:Typing game" content="match as many words as you can in 1 minute">
+   <meta property="og:image" content="https://imgur.com/5N0gOqH">
+   <meta property="og:url" content="http://juandiegocodes.com/stormword.htm">
+   <meta name="twitter:card" content="https://imgur.com/5N0gOqH">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <link rel="stylesheet" href="sweetalert2.min.css">
+   <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+   <link rel="text/css" href="sweetalert2.min.css">
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap" rel="stylesheet">
    <script src="https://kit.fontawesome.com/2194996be4.js"></script> 
    <link rel="stylesheet" href="styles/style.css"/>
@@ -39,7 +46,7 @@
                         <li> You will only have 3 lives!</li>
                     </ul>
                     <a href="#game" class="next">NEXT</a>
-                    <a href="#game" class="nextMobile">NEXT</a>
+                    <a href="#game" class="nextMobile">NEXT MOBILE</a>
                 </div>
             </div>
         </section>
@@ -63,14 +70,14 @@
                         <p class="lifes">Lifes: 3</p>
                     </div>
                     <div>
-                        <p class="timerOn">Time: 60 sec</p>
+                        <p class="timerOn">Time: 60 s</p>
                     </div>
                 </div>
                 <div class="canvas" id="canvas">
                 </div>
                 <div class="inputContainer">
-                    <form action="">
-                        <input type="text" required class="inputText" placeholder="Your word Here">
+                    <form action="" autocomplete="off">
+                        <input type="text" required class="inputText" placeholder="Enter Text" autocomplete="off">
                     </form>
                 </div>
             </div>
@@ -89,6 +96,7 @@
         </section>
     </main>
     <script src='https://code.jquery.com/jquery-3.4.0.min.js' integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <script src="src/randomWords.js"></script>
     <script src="src/index.js"></script>
