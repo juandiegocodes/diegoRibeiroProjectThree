@@ -640,7 +640,7 @@ span i {
     height: auto;
   }
   .canvas {
-    height: 45vh;
+    height: 50vh;
   }
   .mainContainer {
     height: auto;
@@ -665,7 +665,7 @@ span i {
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out;
-    font-size: 2rem;
+    font-size: 1.30rem;
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
   }
@@ -692,7 +692,16 @@ span i {
     }
   }
   .resultsContainer {
-    height: 5vh;
+    height: auto;
+  }
+  .resultsContainer div p {
+    font-size: 1rem;
+  }
+  input[type="text"] {
+    font-size: 1rem;
+  }
+  .inputContainer {
+    height: auto;
   }
 }
 

@@ -356,7 +356,7 @@ span {
     height: auto;
   }
   .canvas{
-    height: 45vh;
+    height: 50vh;
   }
 
   .mainContainer {
@@ -378,7 +378,7 @@ span {
     animation-timing-function: linear;
     opacity: 1;
     transition: opacity 0.2s ease-out;
-    font-size: 2rem;
+    font-size: 1.30rem;
     transform: rotate(0deg);
   }
   
@@ -394,7 +394,16 @@ span {
     }
   }
   .resultsContainer {
-    height: 5vh;
+    height: auto;
+    div p {
+      font-size: 1rem;
+    }
+  }
+  input[type="text"]{
+    font-size: 1rem;
+  }
+  .inputContainer {
+    height: auto;
   }
 }
 /*Even smaller*/
