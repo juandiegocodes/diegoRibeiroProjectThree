@@ -202,7 +202,6 @@ wordApp.init = function() {
 };
 
 wordApp.initMobile = function() {
-  $('.inputText').focus();
   $('.inputText').on('focus', function() {
     document.body.scrollTop = $(this).offset().top;
 });
