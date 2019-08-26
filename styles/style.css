@@ -388,17 +388,17 @@ p {
   list-style: none;
 }
 
-.instructions .containerInstructions ul li::before {
+.instructions .nextMobile {
+  display: none;
+}
+
+ul li::before {
   content: "\2022";
   color: red;
   font-weight: bold;
   display: inline-block;
   width: 1em;
   margin-left: -1em;
-}
-
-.instructions .nextMobile {
-  display: none;
 }
 
 .difficulty {
@@ -643,6 +643,7 @@ span i {
   .cover {
     font-size: 5rem;
     overflow: hidden;
+    height: auto;
   }
   .cover p {
     margin-top: 40%;
@@ -667,6 +668,9 @@ span i {
   .mainContainer {
     height: auto;
   }
+  .gameBoard {
+    width: 100%;
+  }
   .instructions .containerInstructions {
     height: auto;
   }
@@ -678,6 +682,12 @@ span i {
   }
   .instructions .nextMobile {
     display: block;
+  }
+  .instructions {
+    height: auto;
+  }
+  .instructions h2 {
+    margin: 0;
   }
   h4 {
     -webkit-animation: rain 10s;

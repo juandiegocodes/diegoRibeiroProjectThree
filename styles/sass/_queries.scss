@@ -29,6 +29,7 @@
     .cover {
       font-size: 5rem;
       overflow: hidden;
+      height: auto;
       p {
         margin-top: 40%;
         font-size: 1.25rem;
@@ -55,6 +56,10 @@
       height: auto;
     }
 
+    .gameBoard {
+      width: 100%;
+    }
+
     .instructions .containerInstructions {
       height: auto;
     }
@@ -66,6 +71,12 @@
     }
     .instructions .nextMobile {
       display: block;
+    }
+    .instructions {
+      height: auto;
+      h2 {
+        margin: 0;
+      }
     }
     h4 {
       animation: rain 10s;

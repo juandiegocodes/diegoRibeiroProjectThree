@@ -199,9 +199,7 @@ wordApp.initMobile = function() {
   $('.inputText').on('focus', function() {
     window.scrollTo(0, 0);
 });
-  $('.inputText').on('click', function() {
-    window.scrollTo(0, 0);
-});
+
   wordApp.timeWordAppear = 1800;
   wordApp.submitInput();
   // adding random word generated to my html
