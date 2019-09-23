@@ -10,3 +10,5 @@ These were the tools used for thi project:
     CSS3
     JavaScript
     Responsive Design
+
+Juan Diego Ribeiro
